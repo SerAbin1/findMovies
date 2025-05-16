@@ -10,18 +10,19 @@ movie.addEventListener("keypress", async (event) => {
             return;
         }
         details.textContent = `
-        Title: ${movieDetails.Title}
-        Year: ${movieDetails.Year}
-        Genre: ${movieDetails.Genre}
-        Director: ${movieDetails.Director}
-        Writer: ${movieDetails.Writer}
-        Rated: ${movieDetails.Rated}`;
+            Title: ${movieDetails.Title}
+            Year: ${movieDetails.Year}
+            Genre: ${movieDetails.Genre}
+            Director: ${movieDetails.Director}
+            Writer: ${movieDetails.Writer}
+            Rated: ${movieDetails.Rated}
+        `;
     }
 });    
 
 async function getDetails(movieName) {
     try {
-        const response = await fetch(`http://www.omdbapi.com/?apikey=ea4913bc&t=${movieName}`);
+        const response = await fetch(`https://www.omdbapi.com/?apikey=ea4913bc&t=${movieName}`);
         const movieDetails = await response.json();
         return movieDetails;
     } catch (error) {
